@@ -11,7 +11,8 @@ body {
   resize: both;
   height: 100%;
   display: grid;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  grid-template-rows: min(1fr, 150px) 1fr 1fr 1fr;
+  grid-template-columns: 0.7fr 1fr 1fr 1fr;
 }
 
 .sidebar {
@@ -63,8 +64,9 @@ body {
   grid-column: 2/5;
   grid-row: 1;
   display: grid;
-  grid-template: 1fr/1fr 1fr;
-  gap: 20px;
+  grid-template: 1fr 1fr/1fr;
+  gap: 10px;
+  padding: 10px 30px;
 }
 
 .header .icon {
@@ -72,10 +74,10 @@ body {
   width: 30px;
 }
 
-.header > .left {
+.header > .top {
   display: grid;
-  padding-left: 30px;
-  grid-template-columns: 1fr 1fr/1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .searchbar {
@@ -88,8 +90,6 @@ body {
   font-size: 13px;
   border-radius: 16px;
   padding: 5px 10px;
-  transition: box-shadow 100ms ease-in, border 100ms ease-in,
-    background-color 100ms ease-in;
   border: 2px solid #dee1e2;
   color: rgb(14, 14, 16);
   background: #dee1e2;
@@ -99,23 +99,139 @@ body {
 
 .status {
   display: flex;
+  font-weight: 600;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
 }
 
-.header > .right {
+.header > .bottom {
   display: grid;
-  justify-self: end;
-  padding-right: 30px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
   font-size: 24px;
   font-weight: 600;
 }
 .birb {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: auto;
 }
+
+.greet {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.greet .birb {
+  width: 70px;
+  height: auto;
+}
+
+.welcome-header {
+  font-size: 16px;
+  margin: 0;
+}
+
+.welcome-body {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+button {
+  width: 120px;
+  color: whitesmoke;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: #0095ff;
+  border: 1px solid transparent;
+}
+
 /* MAIN */
 .main {
   background-color: lightgray;
   grid-area: 2/2/5/5;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 3fr 1fr;
+}
+
+.main > .left {
+  background-color: #e2e8f0;
+}
+.main > .right {
+  display: grid;
+}
+.main > .right > .top,
+.main > .right > .bottom {
+  background-color: #e2e8f0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+}
+
+.main > .right > .bottom > .bottom-container {
+  justify-content: center;
+}
+
+.main > .right > .top > .top-container,
+.main > .right > .bottom > .bottom-container {
+  background-color: whitesmoke;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border-radius: 16px;
+  padding: 10% 10%;
+}
+
+.main > .right > .bottom > .bottom-container {
+  gap: 0;
+}
+
+.main > .right > .top,
+.main > .right > .bottom {
+  padding: 10px 20px;
+}
+.main > .right > .top > h2,
+.main > .right > .bottom > h2 {
+  margin-top: 0;
+  padding: 5px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+hr {
+  border-width: 1px;
+  border-style: solid;
+  color: #0095ff;
+}
+
+.bc1 {
+  background-color: #ddd6fe;
+}
+.bc2 {
+  background-color: #f87171;
+  text-align: center;
+  color: white;
+}
+.bc3 {
+  background-color: #bfdbfe;
 }

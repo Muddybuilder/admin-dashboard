@@ -168,6 +168,17 @@ button {
 
 .main > .left {
   background-color: #e2e8f0;
+  display: grid;
+  justify-content: center;
+  /* gap: 10px; */
+  grid-template-columns: repeat(3, minmax(100px, 30%));
+  grid-template-rows: auto;
+}
+
+.main > .left > .card {
+  margin: 20px;
+  border-radius: 16px;
+  background-color: whitesmoke;
 }
 .main > .right {
   display: grid;

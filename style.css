@@ -171,8 +171,8 @@ button {
   display: grid;
   justify-content: center;
   /* gap: 10px; */
-  grid-template-columns: repeat(3, minmax(100px, 30%));
-  grid-template-rows: auto;
+  grid-template-columns: repeat(3, minmax(350px, 30%));
+  grid-template-rows: repeat(3, minmax(350px, 30%));
 }
 
 .main > .left > .card {
@@ -191,25 +191,28 @@ button {
   grid-template-rows: 50px 1fr;
 }
 
-.main > .right > .bottom > .bottom-container {
-  justify-content: center;
-}
-
 .main > .right > .top > .top-container,
 .main > .right > .bottom > .bottom-container {
   background-color: whitesmoke;
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   border-radius: 16px;
   padding: 10% 10%;
+
+  box-shadow: 5px 5px 5px lightgray;
 }
 
 .main > .right > .bottom > .bottom-container {
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 0;
+  justify-content: center;
 }
 
+.main > .right > .top > .top-container {
+  grid-template-rows: auto 5px auto 5px auto;
+  align-items: center;
+}
 .main > .right > .top,
 .main > .right > .bottom {
   padding: 10px 20px;
@@ -245,4 +248,34 @@ hr {
 }
 .bc3 {
   background-color: #bfdbfe;
+}
+
+.card {
+  border-radius: 16px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 30px;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+.card img {
+  width: 30px;
+  height: auto;
+}
+
+.cc-bottom {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  justify-content: end;
+}
+
+.cctop span {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cctop p {
+  margin-top: 1rem;
 }
